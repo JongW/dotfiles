@@ -1,0 +1,24 @@
+rofi.color-enabled: true
+rofi.color-window: argb:aa1c1d21, #751c1d21, argb:001c1d2
+rofi.color-normal: argb:001c1d21, #cbcdd2, argb:001c1d21, argb:c2d6d8db
+rofi.color-active: argb:4d1b2b34, #6699cc, argb:4d343d46, argb:4d6699cc, #d8dee9
+rofi.color-urgent: argb:4d1b2b34, #ec5f67, argb:4d343d46, argb:4dec5f67, #d8dee9
+!color : bg - text - bg_alt - fg_select - bg_select
+rofi.modi: run,ssh,window
+rofi.separator-style: solid
+rofi.show-icons: true
+rofi.drun-icon-theme: Papirus-Dark
+!rofi.font: Inconsolata Nerd Font Mono 12
+rofi.font: Google Sans 12
+rofi.sidebar-mode:    true
+rofi.padding: 
+rofi.bw:              10
+rofi.scrollbar-width: 0
+rofi.line-margin:     0
+rofi.lines: 10
+rofi.terminal: urxvt
+rofi.case-sensitive: false
+rofi.columns: 2
+rofi.dpi: 200
+rofi.display-drun:Drun
+
