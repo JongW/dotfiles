@@ -1,0 +1,45 @@
+configuration {
+    lines: 10;
+    columns: 2;
+    display-drun: "App: ";
+}
+@import "colors"
+
+* {
+    background-color:       @xbg;
+    border-color:          @xbg;
+    text-color:           @xfg;
+    font:            "Google Sans 19";
+}
+window {
+    border: 0;
+    border-radius: 4px;
+    padding: 40;
+}
+
+mainbox{
+    background-color:       @xbg;
+    children: [inputbar, listview];
+	spacing: 10px;
+	/*margin: 20%;*/
+	padding: 30px 0;
+	border: 1px;
+	border-color: @base0D;
+}
+
+listview {
+    fixed-height: 0;
+    border: 0px;
+    spacing: 2px;
+    scrollbar: false;
+    padding: 2px 0px 0px;
+}
+element {
+    border: 0;
+    border-radius: 4px;
+    padding: 5px;
+}
+element selected.normal {
+    background-color: @xbs;
+    text-color:       @xfs;
+}

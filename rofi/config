@@ -1,0 +1,5 @@
+! === rofi ===
+
+rofi.modi: drun,window,ssh,run
+rofi.theme: ~/.config/rofi/themes/launchpad.rasi
+rofi.show-icons: true
