@@ -1,0 +1,171 @@
+[bar/main]
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 60
+dpi = 180
+
+; border-top-size = 10
+; border-bottom-size = 0
+; border-right-size = 10
+; border-left-size = 10
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+monitor = eDP-1
+wm-restack = none
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = "Fantasque Sans Mono:pixelsize=10;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-4 = "Iosevka Nerd Font:pixelsize=13;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #1F1F1F
+foreground = #FFFFFF
+border-color = 0
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2 
+padding-right = 2
+module-margin = 1.5
+
+modules-left = volume battery
+modules-center = i3
+modules-right = network cpu date powermenu
+
+tray-position = none
+tray-detached = true
+
+
+
+___________________________________________________________________________
+                            MODULES
+___________________________________________________________________________
+
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+
+label-unfocused-foreground = #afafaf
+label-focused-foreground = #ffffff
+label-urgent-foreground = #ff0000
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %time%
+time =  %H:%M
+time-alt =   %Y-%m-%d
+
+[module/volume]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-muted = %{T5}婢%{T5} mute
+
+ramp-volume-0 = %{T5}奄%{T5}
+ramp-volume-1 = %{T5}奄%{T5}
+ramp-volume-2 = %{T5}奔%{T5}
+ramp-volume-3 = %{T5}奔%{T5}
+ramp-volume-4 = %{T5}墳%{T5}
+ramp-volume-5 = %{T5}墳%{T5}
+ramp-volume-6 = %{T5}墳%{T5}
+
+[module/wlan]
+type = internal/network
+
+interface = wlp58s0
+
+interval = 5
+
+label-connected =  %essid%
+label-disconnected =  Not Connected
+
+click-left = networkmanager_dmenu &
+click-right = networkmanager_dmenu &
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%%
+
+
+[module/powermenu]
+type = custom/text
+content  = 
+click-left = pmenu_1
+click-right = pmenu_1
+
+[module/battery]
+type = internal/battery
+label-font =  "Iosevka Nerd Font:pixelsize=13;3"
+full-at = 99
+time-format = %H:%M
+battery = BAT0
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+; format-charging-background = #607D8B
+; format-charging-padding = 2
+label-charging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+; format-discharging-background = #607D8B
+;format-discharging-padding = 2
+label-discharging = %percentage%%
+format-full = <label-full>
+
+format-full-prefix = "%{T5}%{T5} "
+ramp-capacity-0 = %{T5}%{T5} 
+ramp-capacity-1 = %{T5}%{T5} 
+ramp-capacity-2 = %{T5}%{T5} 
+ramp-capacity-3 = %{T5}%{T5} 
+ramp-capacity-4 = %{T5}%{T5} 
+ramp-capacity-5 = %{T5}%{T5} 
+ramp-capacity-6 = %{T5}%{T5} 
+ramp-capacity-7 = %{T5}%{T5} 
+ramp-capacity-8 = %{T5}%{T5} 
+ramp-capacity-9 = %{T5}%{T5} 
+
+ramp-capacity-0-foreground = #e53935
+ramp-capacity-1-foreground = #e53935
+ramp-capacity-foreground   = #FFFFFF
+; bar-capacity-width = 10
+
+animation-charging-0 = %{T5}%{T5} 
+animation-charging-1 = %{T5}%{T5} 
+animation-charging-2 = %{T5}%{T5} 
+animation-charging-3 = %{T5}%{T5} 
+animation-charging-4 = %{T5}%{T5} 
+animation-charging-5 = %{T5}%{T5} 
+animation-charging-6 = %{T5}%{T5} 
+
+animation-charging-framerate = 750
+
+[module/network]
+type = custom/script
+exec = ~/.config/polybar/polybar-themes/polybar-2/scripts/check-network
+click-left = networkmanager_dmenu &
+click-right = networkmanager_dmenu &
+tail = true
